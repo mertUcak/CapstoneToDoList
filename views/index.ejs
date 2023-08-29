@@ -1,0 +1,47 @@
+<%- include("partials/header.ejs") %>
+
+
+    <main>
+        <div class="mainBox">
+            <div class="middleBox">
+                <div id="middleBox">
+                    <div class="titleBox">
+                        <h1><%= todayDay %> <%= thisMonth %> <%= thisYear %></h1>
+                    </div>
+
+                    <div class="listItemBox">
+                        <% data.forEach(element=> { %>
+                            <div class="item listItem">
+                                <input type="checkbox" name="check" class="strikethrough">
+                                <p class="strikeThis content">
+                                    <%= element.todoTask %>
+                                </p>
+                            </div>
+
+                            <% }); %>
+
+
+
+                                <div class="inputBox">
+                                    <div class="item inputItem">
+                                        <form action="/" method="POST">
+                                            <input type="text" name="todoTask" placeholder="New Item" id="inputText">
+                                            <button type="submit" autocomplete="off" class="inputButton">+</button>
+                                        </form>
+                                    </div>
+
+                                </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+    </main>
+    </body>
+
+    </html>

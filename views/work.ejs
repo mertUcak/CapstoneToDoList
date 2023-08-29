@@ -1,0 +1,37 @@
+<%- include("partials/header.ejs") %>
+
+<main>
+    <div class="mainBox">
+        <div class="middleBox">
+            <div id="middleBox">
+                <div class="titleBox">
+                    <h1>Work List</h1>
+                </div>
+
+                <div class="listItemBox">
+                    <% dataWorks.forEach(element=> { %>
+                    <div class="itemBox">
+                        <div class="item listItem">
+                            <input type="checkbox" name="check" class="strikethrough">
+                            <p class="strikeThis content">
+                                <%= element.workTodo %>
+                            </p>
+                        </div>
+                    </div>
+                    <% }); %>
+
+                    <div class="inputBox">
+                        <div class="item inputItem">
+                            <form action="/work" method="POST">
+                                <input type="text" name="workTodo" placeholder="New Item" id="inputText">
+                                <button type="submit" autocomplete="off">+</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>
